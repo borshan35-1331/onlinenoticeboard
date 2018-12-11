@@ -28,7 +28,7 @@ $imageName=$_FILES['img']['name'];
 $pass=md5($p);
 
 
-$query="insert into user values('','$n','$e','$pass','$mob','$gen','$hob','$imageName','$dob',now(),(select dept_id from depertment where dept_name='$dept'))";
+$query="insert into user values('','$n','$e','$pass','$mob','$gen','$hob','$imageName','$dob',now(),(select dept_id from depertment where dept_name='$dept'),'$test')";
 if(mysqli_query($conn,$query)){
 	mkdir("images/$e");
 move_uploaded_file($_FILES['img']['tmp_name'],"images/$e/".$_FILES['img']['name']);
@@ -155,6 +155,18 @@ $err="<font color='blue'>Registration successfull !!</font>";
 					</td>
 				</tr>
 				<tr>
+					<td>Select test</td>
+					<td>
+				<select name="test" required>
+					<option >Select test</option>
+					<option value="test1">TEST1</option>
+					<option value="test2">TEST2</option>
+					<option value="test3">TEST3</option>
+					
+					
+					</select>	
+					</td>
+				</tr>
 					
 					
 <Td colspan="2" align="center">
